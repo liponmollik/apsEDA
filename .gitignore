@@ -1,0 +1,46 @@
+# Ignore the build directory contents, but not the directory itself initially
+build/*
+
+# Don't ignore the 'output' subdirectory within build/
+!build/output/
+
+# Now, ignore everything inside 'output'
+build/output/*
+
+# But re-include the specific file
+!build/output/final.json
+
+# Ignore all files with .tmp extension
+*.tmp
+
+# And ignore the entire 'logs' directory
+logs/
+
+# If you specifically want to include a file inside a generally ignored directory
+# You would first need to ensure the parent directories are not fully ignored.
+# If 'logs/' is ignored, you cannot re-include 'logs/errors.txt' directly.
+# The previous multi-line approach is necessary.
+
+# However, if you have a pattern like `bin/*` (ignoring contents, not the dir itself)
+# you can re-include a file from there.
+# Example: Ignore everything in `bin/` but keep `bin/executable.exe`
+bin/*
+!bin/executable.exe
+
+# Ignore Microsoft Word documents
+*.docx
+
+# Ignore Microsoft Excel spreadsheets
+*.xlsx
+
+# You can also add other common document types if needed:
+# Ignore Microsoft PowerPoint presentations
+# *.pptx
+
+# Ignore PDF documents
+# *.pdf
+
+# Ignore temporary files created by office applications
+# ~$*.docx
+# ~$*.xlsx
+# ~$*.pptx
